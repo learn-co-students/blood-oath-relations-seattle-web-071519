@@ -1,5 +1,5 @@
 class Bloodoath
-
+    
     attr_accessor :cult, :follower, :initiation_date
     @@all = []
 

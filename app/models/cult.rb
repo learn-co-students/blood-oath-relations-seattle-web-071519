@@ -1,7 +1,7 @@
 class Cult
     # macros give access to to call methods with the following names between all classes
 
-    # attr_accessor :name, :location, :founding_year, :slogan
+    attr_accessor :name, :location, :founding_year, :slogan
     @@all = []
 
     def initialize(name, location, founding_year, slogan)
@@ -61,7 +61,7 @@ class Cult
     end 
 
     ## this plays off the helper meth. above and uses count (method) to find follower.age (in follower class)
-    ## and divides total
+    ## and divides total 
     def average_age
        total = my_followers.collect {|bloodoath| bloodoath.follower.age}.sum
        count = my_followers.count 

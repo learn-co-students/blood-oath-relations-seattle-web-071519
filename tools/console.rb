@@ -26,12 +26,26 @@ bloodoath6 = Bloodoath.new(cult2, follower2, "2001")
 bloodoath7 = Bloodoath.new(cult3, follower1, "2009")
 bloodoath8 = Bloodoath.new(cult3, follower2, "2010")
 bloodoath9 = Bloodoath.new(cult4, follower1, "2011")
-bloodoath10 = Bloodoath.new(cult4, follower2, "2011")
+bloodoat  h10 = Bloodoath.new(cult4, follower2, "2011")
 
+#dot notation called a method within follower class
 Follower.most_active
+
+#Called Methods for Cult
+# <<Instance Methods>>
+Cult.all[0].average_age
+Cult.all.first.my_followers_motto
+Cult.all.first.my_count
+
+# <<Class Methods>>
+Cult.least_popular
+Cult.most_common_location
+
 
 # cult1.recruit_follower(follower1, "8131")
 
+
+#gives access to everything above. all classes and methods 
 binding.pry
 0
 
