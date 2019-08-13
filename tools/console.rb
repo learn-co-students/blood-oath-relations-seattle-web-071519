@@ -1,40 +1,40 @@
 require_relative '../config/environment.rb'
+require 'pry'
 
-def reload
-  load 'config/environment.rb'
-end
-# Insert code here to run before hitting the binding.pry
-# This is a convenient place to define variables and/or set up new object instances,
-# so they will be available to test and play around with in your console
+
+
+# Cult - initialize(name, location, founding_year, slogan)
+cult1 = Cult.new("CultA", "Seattle", 1985, "A")
+cult2 = Cult.new("CultB", "California", 1985, "BB")
+cult3 = Cult.new("CultC", "New York", 1969, "CCC")
+cult4 = Cult.new("CultD", "New York", 1972, "ddd")
+
+#Follower - initialize(name, age, life_motto, cult)
+follower1 = Follower.new("Marisa", 23, "Help Me")
+follower2 = Follower.new("Bob", 40, "I like cults")
+follower3 = Follower.new("Stan", 25, "Keep Culting")
+follower4 = Follower.new("Asif", 40, "I need another drink")
+
+
+# # BloodOath - initialize(cult, follower, initiation_date)
+bloodoath1 = Bloodoath.new(cult1, follower1, "2001")
+bloodoath2 = Bloodoath.new(cult1, follower2, "2009")
+bloodoath3 = Bloodoath.new(cult1, follower3, "2010")
+bloodoath4 = Bloodoath.new(cult2, follower4, "2011")
+bloodoath5 = Bloodoath.new(cult2, follower3, "2011")
+bloodoath6 = Bloodoath.new(cult2, follower2, "2001")
+bloodoath7 = Bloodoath.new(cult3, follower1, "2009")
+bloodoath8 = Bloodoath.new(cult3, follower2, "2010")
+bloodoath9 = Bloodoath.new(cult4, follower1, "2011")
+bloodoath10 = Bloodoath.new(cult4, follower2, "2011")
+
+Follower.most_active
+
+# cult1.recruit_follower(follower1, "8131")
 
 binding.pry
+0
 
-#this called method reffers to the Cult class which calls for four parameters to be executed when called.
 
-cult_one = Cult.new("Drop Club", "Seattle", "Were the Drop Club" 2000)
-cult_two = Cult.new("The Cult", "Oregon", "Were the Cult Club" 2005)
-cult_three = Cult.new("Gold Coast", "California", "Were the Gold Coast Club" 2010)
-cult_four = Cult.new("Other Coast", "New York", "Were the Other Coast Club" 2015)
-binding.pry
-#this called method reffers to the Follower class, the class itself shows that three arguments were to be passed through its parameters so therefore we must call three 
 
-follower_one = Follower.new("Sue" 40, "Cults are fun")
-follower_two = Follower.new("Beth", 35, "I like cults")
-follower_three = Follower.new("Chris", 30, "Culting all day")
-follower_four = Follower.new("John", 40, "Idk bout this cult")
 
-binding.pry
-
-#this called method reffers to what connects the Cult and Follower class. The BloodOath class is called with parameters 
-#that invoke the two other classes to combone? both . 
-bloodoath_times_one = BloodOath.new(cult_one, follower_one, "2019-04-06"  )
-bloodoath_times_two = BloodOath.new(cult_two, follower_two, "2019-06-09" )
-bloodoath_times_three = BloodOath.new(cult_three, follower_three, "2019-03-08" )
-bloodoath_times_four = BloodOath.new(cult_four, follower_four, "2019-10-13" )
-# bloodoath_times_five = BloodOath.new()
-
-Cult.recruit_follower("Sue")
-Follower.cults("The Cult")
-BloodOath.all 
-
-puts "Mwahahaha!" # just in case pry is buggy and exits
